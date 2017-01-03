@@ -20,13 +20,13 @@ void *thread1()
 	for (i = 0; i < MAX; i++)
 	{
 		pthread_mutex_lock(&mut);
-			number++;
-      printf("pthread1 : number = %d\n",number);
+		number++;
+      		printf("pthread1 : number = %d\n",number);
 		pthread_mutex_unlock(&mut);
-    usleep(1);
+    		usleep(1);
 	}
 	printf("pthread1 : done the thread\n");
-  pthread_exit(NULL);
+  	pthread_exit(NULL);
 }
 void *thread2()
 {
@@ -35,10 +35,10 @@ void *thread2()
 	for (i = 0; i < MAX; i++)
 	{
 		pthread_mutex_lock(&mut);
-			number++;
-      printf("pthread2 : number = %d\n",number);
+		number++;
+      		printf("pthread2 : number = %d\n",number);
 		pthread_mutex_unlock(&mut);
-    usleep(1);
+    		usleep(1);
 	}
 	printf("pthread2 : done the thread\n");
 	pthread_exit(NULL);
@@ -64,13 +64,13 @@ void thread_create(void)
 
 int main()
 {
-		number=0;
-    /*mutex init*/
-    pthread_mutex_init(&mut,NULL);
-    printf("I'm the main process, do the thread_create\n");
-    thread_create();
-    printf("I'm the main process, do the thread_wait\n");
-    while(1);
-    return 0;
+	number=0;
+    	/*mutex init*/
+    	pthread_mutex_init(&mut,NULL);
+    	printf("I'm the main process, do the thread_create\n");
+    	thread_create();
+    	printf("I'm the main process, do the thread_wait\n");
+    	while(1);
+    	return 0;
 }
 
